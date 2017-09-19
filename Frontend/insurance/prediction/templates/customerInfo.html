@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Info</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+       body,
+        html {
+        background-color:#f8f8f8;
+        width: 100%;
+        height: 100%;
+        }
+        .intro-header2 {
+        padding-top: 50px;
+        padding-bottom: 50px;
+        text-align: center;
+        background: url(https://static.pexels.com/photos/134685/pexels-photo-134685.jpeg) no-repeat center center;
+        background-size: cover;
+    }
+
+        .content-section-a {
+        padding: 30px 0;
+        background-color: #f8f8f8;
+        }
+         .section-heading {
+        margin-bottom: 10px;
+        }
+
+        .section-heading-spacer {
+        float: left;
+        width: 200px;
+        border-top: 2px solid #e7e7e7;
+        }
+        .w1 {
+        color:#EFEDEA;
+        font-family: 'Raleway', sans-serif;
+        font-size:18px;
+        letter-spacing:5px;
+        }
+        .w2 {
+        color:#d6d4d1;
+        font-family: 'Josefin Sans', sans-serif;
+        font-size:13px;
+        letter-spacing:5px;
+        }
+        .w3 {
+        font-family: 'Josefin Sans', sans-serif;
+        font-size:15px;
+        letter-spacing:2px;
+        }
+        .w4 {
+        color:#2d2d2c;
+        font-family: 'Raleway', sans-serif;
+        font-size:18px;
+        letter-spacing:2px;
+        }
+        .btn-custom{
+        border-radius:0px;
+        background-color:#f8f8f8;
+        }
+        .w5{
+        color:#2d2d2c;
+        font-family: 'Raleway', sans-serif;
+        font-size:14px;
+        letter-spacing:2px;
+        }
+    </style>
+</head>
+<body>
+
+
+<div class="intro-header2">
+        <p class="w1">ALLSTATE CUSTOMER PURCHASE PREDICTION</p>
+        <p class="w2">Explore the value behind the transaction data.</p>
+</div>
+
+<div>
+    <br><br>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-2">
+        </div>
+
+        <div class="col-md-4">
+            <font class="w4">
+                <b>Detail Information</b>
+            </font>
+            <br>
+            <br>
+
+            <div class="w5">
+                <p>Customer ID: {{customer.customer_ID}}</p>
+                <p>State Group: {{customer.state_group}}</p>
+                <p>Group Size: {{customer.group_size}}</p>
+                <p>Car Age: {{customer.car_age}}</p>
+                <p>Car Value: {{customer.car_value}}</p>
+                <P>Risk Factor: {{customer.risk_factor}}</P>
+                <p>Marriage Status: {{customer.married_couple}}</p>
+                <p>Did Customer purchase Option C before: {{customer.C_previous}}</p>
+                <p>Previous Duration: {{customer.duration_previous}}</p>
+                <p>Cost: {{customer.cost}}</p>
+                <p>Purchase Time: {{customer.timeofday}}</p>
+                <p>Age Difference: {{customer.agedif}}</p>
+            </div>
+
+        </div>
+
+        <div class="col-md-1"></div>
+
+        <div class="col-md-4">
+            <font class="w4">
+                <b>Option Prediction</b>
+            </font>
+            <br>
+            <br>
+            <div class="w5">
+            <p>A:{{customer.A}}</p>
+            <p>B:{{customer.B}}</p>
+            <p>C:{{customer.C}}</p>
+            <p>D:{{customer.D}}</p>
+            <p>E:{{customer.E}}</p>
+            <p>F:{{customer.F}}</p>
+            <p>G:{{customer.G}}</p>
+            </div>
+
+        </div>
+        <div class="col-md-1"></div>
+
+    </div>
+
+
+    <hr>
+    <p style="text-align:center" class="w5">
+        Produced By Siqi Ren, Xin Yu, Lan Yan
+    </p>
+    <br>
+</div>
+
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer List</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+       body,
+        html {
+        background-color:#f8f8f8;
+        width: 100%;
+        height: 100%;
+        }
+        .intro-header2 {
+        padding-top: 50px;
+        padding-bottom: 50px;
+        text-align: center;
+        background: url(https://static.pexels.com/photos/134685/pexels-photo-134685.jpeg) no-repeat center center;
+        background-size: cover;
+    }
+
+        .content-section-a {
+        padding: 30px 0;
+        background-color: #f8f8f8;
+        }
+         .section-heading {
+        margin-bottom: 10px;
+        }
+
+        .section-heading-spacer {
+        float: left;
+        width: 200px;
+        border-top: 2px solid #e7e7e7;
+        }
+        .w1 {
+        color:#EFEDEA;
+        font-family: 'Raleway', sans-serif;
+        font-size:18px;
+        letter-spacing:5px;
+        }
+        .w2 {
+        color:#d6d4d1;
+        font-family: 'Josefin Sans', sans-serif;
+        font-size:13px;
+        letter-spacing:5px;
+        }
+        .w3 {
+        font-family: 'Josefin Sans', sans-serif;
+        font-size:15px;
+        letter-spacing:2px;
+        }
+        .w4 {
+        color:#2d2d2c;
+        font-family: 'Raleway', sans-serif;
+        font-size:18px;
+        letter-spacing:2px;
+        }
+        .btn-custom{
+        border-radius:0px;
+        background-color:#f8f8f8;
+        border-color:#f8f8f8;
+
+        }
+
+        .well-custom{
+        border-radius:0px;
+        background-color:#FAE5D3;
+        border-color:#FAE5D3;
+        box-shadow:2px 2px 5px #E5E7E9;
+        }
+         .w5{
+        color:#2d2d2c;
+        font-family: 'Raleway', sans-serif;
+        font-size:14px;
+        letter-spacing:2px;
+        }
+        .w6 {
+        color:#2d2d2c;
+        font-family: 'Raleway', sans-serif;
+        font-size:13px;
+        letter-spacing:2px;
+        }
+    </style>
+    <script>
+        function myFunction(){
+            var input, filter, table, tr, td, i;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("myTable");
+            tr = table.getElementsByTagName("tr");
+
+            for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[1];
+            if (td) {
+                if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+                } else {
+                tr[i].style.display = "none";
+                    }
+                    }
+                }
+                }
+    </script>
+</head>
+<body>
+    <div class="intro-header2">
+        <p class="w1">ALLSTATE CUSTOMER PURCHASE PREDICTION</p>
+        <p class="w2">Explore the value behind the transaction data.</p>
+    </div>
+
+
+ <div class="content-section-a">
+
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-3">
+                    <div class="well well-custom">
+
+                        <p class="w5">Search By Transaction ID</p>
+
+                        <input class="w3" type="text" id="myInput" onkeyup="myFunction()">
+                        <br>
+                        <br>
+                        <a class="w6 btn btn-default btn-custom" href="{% url 'customerCreate' %}">
+                            Add Customer
+                        </a>
+                        </div>
+
+                </div>
+
+
+                <div class="col-md-8">
+                    <font class="w4"><b>Transaction List</b></font>
+                    <br>
+                    <hr>
+                    <br>
+                    <div class="clearfix"></div>
+
+
+                    <table data-toggle="table" class="w3 table table-striped" id="myTable">
+                        <thead>
+                            <th data-sortable="true">Transaction ID</th>
+                            <th>Customer ID</th>
+                        </thead>
+                        <tbody>
+                        {% for customer in all_customer|slice:":1000" %}
+                        <tr>
+                            <td>{{customer.id}}</td>
+
+                            <td><a href="{% url 'customerInfo' customer.id %}">{{ customer.customer_ID}}</a></td>
+
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+
+
+                    </table>
+            </span>
+        </div>
+
+
+
+
+                    </div>
+
+
+            </div>
+            <hr>
+            <p style="text-align:center" class="w5">
+                Produced By Siqi Ren, Xin Yu, Lan Yan
+            </p>
+
+        </div>
+
+
+
+
+</div>
+</body>
+</html>

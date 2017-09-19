@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Form</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+       body,
+        html {
+        background-color:#f8f8f8;
+        width: 100%;
+        height: 100%;
+        }
+
+
+        .content-section-a {
+        padding: 30px 0;
+        background-color: #f8f8f8;
+        }
+         .section-heading {
+        margin-bottom: 10px;
+        }
+
+        .section-heading-spacer {
+        float: left;
+        width: 200px;
+        border-top: 2px solid #e7e7e7;
+        }
+        .w1 {
+        color:#EFEDEA;
+        font-family: 'Raleway', sans-serif;
+        font-size:18px;
+        letter-spacing:5px;
+        }
+        .w2 {
+        color:#d6d4d1;
+        font-family: 'Josefin Sans', sans-serif;
+        font-size:13px;
+        letter-spacing:5px;
+        }
+        .w3 {
+        font-family: 'Josefin Sans', sans-serif;
+        font-size:15px;
+        letter-spacing:2px;
+        }
+        .w4 {
+        color:#2d2d2c;
+        font-family: 'Raleway', sans-serif;
+        font-size:18px;
+        letter-spacing:2px;
+        }
+        .btn-custom{
+        border-radius:0px;
+        background-color:#f8f8f8;
+        border-color:#818484;
+        border-style:dotted;
+        }
+        .w6 {
+        color:#2d2d2c;
+        font-family: 'Raleway', sans-serif;
+        font-size:13px;
+        letter-spacing:2px;
+        }
+        .intro-header2 {
+        padding-top: 50px;
+        padding-bottom: 50px;
+        text-align: center;
+        color:white;
+        background: url(https://static.pexels.com/photos/134685/pexels-photo-134685.jpeg) no-repeat center center;
+        background-size: cover;
+        }
+        .w5{
+        color:#2d2d2c;
+        font-family: 'Raleway', sans-serif;
+        font-size:14px;
+        letter-spacing:2px;
+        line-height:150%;
+        }
+        .btn-custom{
+        border-radius:0px;
+        background-color:#f8f8f8;
+        border-color:#818484;
+        border-style:dotted;
+        }
+
+
+
+    </style>
+
+</head>
+
+<body>
+<div class="intro-header2">
+        <p class="w1">ALLSTATE CUSTOMER PURCHASE PREDICTION</p>
+        <p class="w2">Explore the value behind the transaction data.</p>
+    </div>
+<br>
+
+
+<div class="container">
+
+
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-8">
+            <form action="" method="post" role="form" class="w5" class="form-inline">
+                {% csrf_token %}
+                {% for field in form %}
+                    <p> {{field.label_tag}}</p>
+                    {{field}}
+                {% endfor %}
+                <br>
+                <br>
+            <button type="submit" class="btn btn-default btn-custom">Submit</button>
+            </form>
+        </div>
+
+    </div>
+
+    <br>
+     <hr>
+    <p style="text-align:center" class="w5">
+        Produced By Siqi Ren, Xin Yu, Lan Yan
+    </p>
+    <br>
+</div>
+
+
+</body>
+</html>
